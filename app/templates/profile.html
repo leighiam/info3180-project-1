@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <br>
+    <div style="margin: 0 auto; width: 80%; height: 50px;">
+        <h1 class="heading">Add Profile</h1>
+    </div>
+    <br>
+    <br>
+    <div id="container">
+    <br>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('profile') }}">
+            {{ form.csrf_token }}
+        
+                <p>
+                    <span class="label">{{ form.fname.label }} </span><br>
+                    <span id="shift">{{ form.fname(class_='input') }}</span>
+                </p>
+                <p>
+                    <span class="label">{{ form.lname.label }} </span><br>
+                    <span id="shift">{{ form.lname(class_='input') }}</span>
+                </p>
+                <p>
+                    <span class="label">{{ form.gender.label }} </span><br>
+                    <span id="shift" class="option">
+                    {{ form.gender(class_='input') }}</span>
+                </p>
+                <p>
+                    <span class="label">{{ form.email.label }} </span><br>
+                    <span id="shift">
+                    {{ form.email(class_='input') }}</span>
+                </p>
+                <p>
+                    <span class="label">{{ form.location.label }} </span><br>
+                    <span id="shift">
+                    {{ form.location(class_='input') }}</span>
+                </p>
+                <p>
+                    <span class="label">{{ form.biography.label }} </span><br>
+                    <span id="shift">
+                    {{ form.biography(cols="35", rows="5", class_='input') }}</span>
+                </p>
+                <p>
+                    <span class="label">{{ form.image.label }}</span><br> 
+                    <span id="shift">
+                    {{ form.image }}</span>
+                    <br>
+                    <br>
+                    <span id="shift"><button type="submit" name="submit" class="submit">Add Profile</button></span>
+                </p>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <br>
+    <br>
+    <div id="container-2">
+        <div class="profile-image-container" style="padding-left: 50px;">
+            <br>
+            <br>
+            <img class="profile-image-1" src="{{ url_for('static', filename='uploads/'+user.image) }}">
+        </div>
+        <div class="info-container-2" style="font-size: 18px;">
+            <br>
+            <br>
+            <span> 
+                <b style="font-size: 30px; color:black;">{{ user.first_name}} {{ user.last_name }}</b>
+            </span> 
+            <br/>
+            <img class="icon-image" src="{{ url_for('static', filename='images/mail.png') }}">  {{user.email}}<br/>
+            <img class="icon-image" src="{{ url_for('static', filename='images/location.png') }}">  {{ user.location }}<br/>
+            <img class="icon-image" src="{{ url_for('static', filename='images/calendar.png') }}">  {{ user.date}}
+        </div>
+        <div style="padding-top: 20px; padding-bottom: 20px; padding-left: 50px; font-weight: bolder; color:grey;">
+            About Me
+        </div>
+        <div class="bio" style="color: grey;">{{user.biography}} {{user.userid}}</div><br>
+        <div id="button"> 
+            <div style="display: block; margin: 0 auto; width: 65%; height: 60%;">
+                <button class="btn btn-primary" style="font-weight: bold; background-color: #62d63c; border-color: #62d63c; padding: 6px 60px; text-align: center;">Send Message</button>
+            </div>
+        </div>
+        <di id="button">
+            <div style="display: block; margin: 0 auto; width: 65%; height: 60%;">
+                <button class="btn btn-primary" style="font-weight: bold; padding: 6px 90px; text-align: center;">Follow</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
